@@ -1,0 +1,94 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <script language="javascript" src="libraries/p5.dom.js"></script>
+  <script language="javascript" src="libraries/p5.sound.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <script language="javascript" type="text/javascript" src="Tile.js"></script>
+  <script language="javascript" type="text/javascript" src="setting_level.js"></script>
+  <script language="javascript" type="text/javascript" src="Player.js"></script>
+  <script language="javascript" type="text/javascript" src="Solid.js"></script>
+  <script language="javascript" type="text/javascript" src="Dot.js"></script>
+  <script language="javascript" type="text/javascript" src="Population.js"></script>
+  <script language="javascript" type="text/javascript" src="Brain.js"></script>
+  <script language="javascript" type="text/javascript" src="Node.js"></script>
+
+
+  <link rel ="stylesheet" type = "text/css" href="../../../../style.css"/>
+  <link rel ="stylesheet" type = "text/css" href="../localStyle.css"/>
+
+  <link rel = "shortcut icon" type = "image/png" href = "../../../../img/favicon3.png"/>
+  <title> TheBigCB.com </title>
+  <!-- <script language="javascript" type="text/javascript" src="sketch.js"></script> -->
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <h1> TheBigCB.com </h1>
+      <h6> Because CodeBullet.com was taken</h6>
+    </div>
+    <hr>
+    <div id="topnav">
+      <a href="../../../../index.html">Home</a>
+      <a href="../../../../projects.html">Projects</a>
+      <a href="../../../../merch.html">Merchandise</a>
+      <a href="../../../../faq.html">FAQ</a>
+      <a href="../../../../about.html">About</a>
+    </div>
+
+    <div id = "main">
+      <h2> Worlds Hardest Game Level 1</h2>
+      <div id = "canvas">
+      </div>
+
+
+      <br/>
+      <div id = "instructions">P -> play yourself &emsp;&emsp; G -> replay evolution hightlights &emsp;&emsp; SPACE -> only show best player</div>
+      <br/>
+
+
+      <div id = buttons>
+      <div id = "resetButton">
+      </div>      <br/>
+
+      <hr/>
+      <br/>
+
+      <div id = "popSize">
+      </div>      <br/>
+
+      <div id = "mutationRate">
+      </div>      <br/>
+
+      <div id = "evolutionSpeed">
+      </div>      <br/>
+      <hr/>
+
+      <div id = "increaseMovesBy">
+      </div>      <br/>
+
+      <div id = "increaseEvery">
+      </div>      <br/>
+    </div>
+
+  </div>
+  </div>
+
+
+  <script>
+    //center the canvas
+    var tempString = ""+((window.innerWidth*0.9- 1306 - window.innerWidth*0.9*0.08 )/2)+ "px";
+    document.getElementById("main").style.marginLeft = tempString;
+
+
+    window.onresize = function(event) {
+      var tempString = ""+((window.innerWidth*0.9- 1306 - window.innerWidth*0.9*0.08 )/2)+ "px";
+      document.getElementById("main").style.marginLeft = tempString;
+    };
+
+  </script>
+
+</body>
+</html>
