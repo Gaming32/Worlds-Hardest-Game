@@ -4,10 +4,11 @@
 from logic import *
 
 #world = tk.Canvas()
+noneimg=tk.PhotoImage('Coin.gif', width=50, height=50)
 def btnapply(obj, x, y, **increment):
     # print(x,y)
-    obj = tk.Button(win, width=4, height=2, relief='flat', command=(lambda:changebtncolor(obj)))
-    obj.place(x=x*40, y=y*40)
+    obj = tk.Button(win, image=noneimg, relief='flat', command=(lambda:changebtncolor(obj)))
+    obj.grid(column=x, row=y)
     # print(obj.place_info())
     return obj
 win.config(width=888, height=565)
@@ -62,7 +63,8 @@ menu_file.add_separator()
 menu_file.add_command(label='Quit', command=win.quit)
 menu_bar.add_cascade(label='File', menu=menu_file)
 menu_help = tk.Menu(menu_bar, tearoff=0)
-menu_help.add_command(label='Help', command=(lambda:showinfo('Help', 'White = Nothing\nGray = Ground\nRed = Start\nYellow = Green\nGreen = Goal')))
+menu_help.add_command(label='Help', command=lambda:showinfo('Help', 'White = Nothing\nGray = Ground\nRed = Start\nYellow = Green\nGreen = Goal'))
+menu_help.add_command(label='About', command=lambda:showinfo('About', 'Credits:\n\tOriginal Game: Snubby Land\n\tAI and Remake: Code Bullet\n\tLevel Editor: Gaming32\n\tInstaller: InstallForge'))
 menu_bar.add_cascade(label='Help', menu=menu_help)
 win.config(menu=menu_bar)
 
