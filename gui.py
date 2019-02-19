@@ -4,7 +4,9 @@
 from logic import *
 
 #world = tk.Canvas()
-noneimg=tk.PhotoImage('Coin.gif', width=50, height=50)
+noneimg=tk.PhotoImage(                 width=50, height=50)
+coinimg=tk.PhotoImage(file='Coin.gif', width=50, height=50)
+dotimg =tk.PhotoImage(file='Dot.gif' , width=50, height=50)
 def btnapply(obj, x, y, **increment):
     # print(x,y)
     obj = tk.Button(win, image=noneimg, relief='flat', command=(lambda:changebtncolor(obj)))
