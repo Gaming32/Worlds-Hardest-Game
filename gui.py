@@ -32,11 +32,15 @@ def save():
     lvls[simpledialog.askstring('File', 'File to save to')] = getlvlinfo(matrix)
     lvls.sync()
 def load():
-    setlvlinfo(lvls[simpledialog.askstring('File', 'File to load from')], matrix)
+    lvl = simpledialog.askstring('File', 'File to load from')
+    if lvl.startswith('\\\\'): cmdswitch(lvl)
+    else: setlvlinfo(lvls[lvl], matrix)
+def cmdswitch(cmd):
+    pass
 def exportlvl():
-    pickle.dump(getlvlinfo(matrix), filedialog.asksaveasfile('wb', defaultextension='.lvl'))
+    pickle.dump(getlvlinfo(matrix), filedialog.asksaveasfile('wb', defaultextension='.whg'))
 def importlvl():
-    setlvlinfo(pickle.load(filedialog.askopenfile('rb', defaultextension='.lvl')), matrix)
+    setlvlinfo(pickle.load(filedialog.askopenfile('rb', defaultextension='.whg')), matrix)
 import os
 import webbrowser
 def play():
@@ -71,6 +75,7 @@ menu_bar.add_cascade(label='Help', menu=menu_help)
 win.config(menu=menu_bar)
 
 win.title("World's Hardest Game Remake")
+win.iconbitmap('Player.ico')
 
 if __name__ == "__main__":
     new()
